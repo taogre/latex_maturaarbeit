@@ -1,0 +1,103 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+% Version 2018-11-15, C. von Arx
+
+\documentclass[12pt, german]{scrartcl}   % für deutsche MA
+%\documentclass[12pt, english]{scrartcl} % für englische MA 
+
+\usepackage{KSA}[2018/11/15]  % KSA Vorlage    
+
+%___________________________ Optionen  _______________________________________
+%\hypersetup{allcolors=black} % für den Papierausdruck
+
+\usepackage[square]{natbib}   % für Quellen mit AutorIn, Jahr 
+%\usepackage[numbers]{natbib} % für nummerierte Quellen	
+% getrennte Literatur- und Internet-Bibliographien: mit Aufwand möglich, bitte mail an C. von Arx
+
+\setlength\parskip{2.5ex}     % Abstand zwischen zwei Paragraphen
+\setlength\parindent{0em}     % Einzug eines neuen Paragraphen
+
+%___________________________ Definitionen von Textbausteinen _________________
+\def\BILDER{Bilder/}    % Ordner, wo alle Bilder abgelegt sind.
+\def\maAutorIn{•}
+\def\maKlasse{, 6•}
+\def\maOrt{•}
+\def\maTitel{Ein langer Titel\\ kann in kleine Stücke\\ zerlegt werden} 
+\setlength{\vPositionTitel}{2.0mm} % positive Länge schiebt Titel nach oben
+\def\maTitelfarbe{\color{white}}   % black; Liste weiterer Farben: http://www.math.harvard.edu/computing/latex/color.html
+\def\maTitelbild{\BILDER venice}
+\def\maDate{\today}                % am Schluss das fixe Datum einsetzen!
+\def\maBetreuung{•, \maFachschaft •}
+\def\maFRAGE{•}
+% Zitat (optional)
+\renewcommand*{\dictumwidth}{.4\textwidth}
+\renewcommand*{\dictumauthorformat}[1]{\normalsize (#1)}
+\def\maDictum{\vfill\large\dictum[•]{\large •}}
+%_____________________________________________________________________________
+%_____________________________________________________________________________
+
+\pagenumbering{Roman}
+\setcounter{page}{0}
+\begin{document}
+
+%________________________ Titelseite _________________________________________
+\SimpleFrontPagefalse % wird auskommentiert für Corporate Design 
+\ifSimpleFrontPage
+	\titlehead{{\Large \includegraphics[width=0.5\textwidth]{\BILDER ksalpenquai}} \\ 
+	\centerline{\hrulefill} \bigskip}
+	\subject{\Maturaarbeit \vspace{2cm}}
+
+	\title{\maTitel\vspace{2cm}}
+	\author{\maAutorIn\maKlasse}
+	\date{\today}
+	\publishers{\bigskip {\large \maBetr \maBetreuung}
+	%\maDictum 			% Zitat kann auskommentiert werden.
+	}
+	\maketitle
+\else   
+	\AddToShipoutPicture*{\BackgroundPic}% Definition siehe KSA.sty (ab Linie 170)
+\fi
+\thispagestyle{empty}
+%________________________ Abstract    ________________________________________
+\begin{abstract}
+	\include{Abstract} 	% Name des Files
+\end{abstract}
+\newpage
+%________________________ Tips        ________________________________________
+\include{tips}          % wird auskommentiert, sobald nicht mehr gebraucht
+%________________________ Inhaltsverzeichnis    ______________________________
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+%________________________ Kapitel    _________________________________________
+ 
+\include{Vorwort}		% Name des Files
+
+\include{Methoden}		% Name des Files
+
+\include{Ergebnisse}	        % Name des Files
+
+\include{Diskussion}	        % Name des Files
+
+\include{Reflexion}		% Name des Files
+
+%________________________ Quellen    _________________________________________
+%\renewcommand\refname{Literaturverzeichnis} 
+\bibliography{Quellen} 	% Name des Files, welche die Quellen enthält
+\bibliographystyle{\myNatdin} % deutsch: natdin.bst (default version); english: natdin_e.bst mitgeliefert in diesem Ordner
+
+%________________________ Abbildungsverzeichnis    ___________________________
+\BemerkungLoFig{Abbildungen ohne Quellenangaben wurden von der Autorin selbst erstellt.}
+\listoffigures
+
+%________________________ Tabellenverzeichnis    _____________________________
+\BemerkungLoTab{Sämtliche Tabellen wurden vom Autor selbst erstellt.} 
+\listoftables
+
+%________________________ Redlichkeitserklärung    ___________________________
+\maRedlichkeit
+%________________________ Anhang    __________________________________________
+\appendix\newpage
+\include{Anhang}		% Name des Files
+\end{document}
+
