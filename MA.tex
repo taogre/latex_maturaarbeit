@@ -3,15 +3,19 @@
 % Version 2018-11-15, C. von Arx
 
 \documentclass[12pt, german]{scrartcl}   % für deutsche MA
-%\documentclass[12pt, english]{scrartcl} % für englische MA 
+%\documentclass[12pt, english]{scrartcl} % für englische MA
 
-\usepackage{KSA}[2018/11/15]  % KSA Vorlage    
+\usepackage{KSA}[2018/11/15]  % KSA Vorlage
 
 %___________________________ Optionen  _______________________________________
 %\hypersetup{allcolors=black} % für den Papierausdruck
 
-\usepackage[square]{natbib}   % für Quellen mit AutorIn, Jahr 
-%\usepackage[numbers]{natbib} % für nummerierte Quellen	
+\usepackage{float} % um Bilder positionieren zu können
+
+\usepackage{graphicx} % um Bilder einzufügen
+
+\usepackage[square]{natbib}   % für Quellen mit AutorIn, Jahr
+%\usepackage[numbers]{natbib} % für nummerierte Quellen
 % getrennte Literatur- und Internet-Bibliographien: mit Aufwand möglich, bitte mail an C. von Arx
 
 \setlength\parskip{2.5ex}     % Abstand zwischen zwei Paragraphen
@@ -19,16 +23,16 @@
 
 %___________________________ Definitionen von Textbausteinen _________________
 \def\BILDER{Bilder/}    % Ordner, wo alle Bilder abgelegt sind.
-\def\maAutorIn{•}
-\def\maKlasse{, 6•}
-\def\maOrt{•}
-\def\maTitel{Ein langer Titel\\ kann in kleine Stücke\\ zerlegt werden} 
+\def\maAutorIn{Tao Grenkowski}
+\def\maKlasse{, 6e}
+\def\maOrt{Kantonschule Alpenquai Luzern}
+\def\maTitel{Bau und Programmierung eines autonomen Indoorgewächshauses}
 \setlength{\vPositionTitel}{2.0mm} % positive Länge schiebt Titel nach oben
 \def\maTitelfarbe{\color{white}}   % black; Liste weiterer Farben: http://www.math.harvard.edu/computing/latex/color.html
 \def\maTitelbild{\BILDER venice}
 \def\maDate{\today}                % am Schluss das fixe Datum einsetzen!
-\def\maBetreuung{•, \maFachschaft •}
-\def\maFRAGE{•}
+\def\maBetreuung{Teodora Mitkova, \maFachschaft •}
+\def\maFRAGE{Was braucht es um ein autonomes Indoorgewächshaus zu bauen und programmieren?}
 % Zitat (optional)
 \renewcommand*{\dictumwidth}{.4\textwidth}
 \renewcommand*{\dictumauthorformat}[1]{\normalsize (#1)}
@@ -41,9 +45,9 @@
 \begin{document}
 
 %________________________ Titelseite _________________________________________
-\SimpleFrontPagefalse % wird auskommentiert für Corporate Design 
+\SimpleFrontPagefalse % wird auskommentiert für Corporate Design
 \ifSimpleFrontPage
-	\titlehead{{\Large \includegraphics[width=0.5\textwidth]{\BILDER ksalpenquai}} \\ 
+	\titlehead{{\Large \includegraphics[width=0.5\textwidth]{\BILDER ksalpenquai}} \\
 	\centerline{\hrulefill} \bigskip}
 	\subject{\Maturaarbeit \vspace{2cm}}
 
@@ -54,7 +58,7 @@
 	%\maDictum 			% Zitat kann auskommentiert werden.
 	}
 	\maketitle
-\else   
+\else
 	\AddToShipoutPicture*{\BackgroundPic}% Definition siehe KSA.sty (ab Linie 170)
 \fi
 \thispagestyle{empty}
@@ -64,14 +68,18 @@
 \end{abstract}
 \newpage
 %________________________ Tips        ________________________________________
-\include{tips}          % wird auskommentiert, sobald nicht mehr gebraucht
+%\include{tips}          % wird auskommentiert, sobald nicht mehr gebraucht
 %________________________ Inhaltsverzeichnis    ______________________________
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
 %________________________ Kapitel    _________________________________________
- 
+
 \include{Vorwort}		% Name des Files
+
+\include{Danksagung} % Name des Files
+
+\include{Einleitung} % Name des Files
 
 \include{Methoden}		% Name des Files
 
@@ -82,7 +90,7 @@
 \include{Reflexion}		% Name des Files
 
 %________________________ Quellen    _________________________________________
-%\renewcommand\refname{Literaturverzeichnis} 
+%\renewcommand\refname{Literaturverzeichnis}
 \bibliography{Quellen} 	% Name des Files, welche die Quellen enthält
 \bibliographystyle{\myNatdin} % deutsch: natdin.bst (default version); english: natdin_e.bst mitgeliefert in diesem Ordner
 
@@ -91,7 +99,7 @@
 \listoffigures
 
 %________________________ Tabellenverzeichnis    _____________________________
-\BemerkungLoTab{Sämtliche Tabellen wurden vom Autor selbst erstellt.} 
+\BemerkungLoTab{Sämtliche Tabellen wurden vom Autor selbst erstellt.}
 \listoftables
 
 %________________________ Redlichkeitserklärung    ___________________________
@@ -100,4 +108,3 @@
 \appendix\newpage
 \include{Anhang}		% Name des Files
 \end{document}
-

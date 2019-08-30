@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="712.927" height="503.5" viewBox="0, 0, 712.927, 503.5">
+  <g id="Layer_1">
+    <path d="M63.427,5.5 L63.427,440.5 L708.427,440.5" fill-opacity="0" stroke="#656565" stroke-width="3"/>
+    <path d="M142.927,48.5 C183.927,208.5 381.927,352.5 628.927,376.5" fill-opacity="0" stroke="#DE787A" stroke-width="3"/>
+    <text transform="matrix(0, -1, 1, 0, 23, 83.837)">
+      <tspan x="-78.837" y="10" font-family="Avenir-Medium" font-size="33" fill="#656565">Resistance</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 612.871, 480.5)">
+      <tspan x="-95.057" y="10" font-family="Avenir-Medium" font-size="33" fill="#656565">Temperature</tspan>
+    </text>
+  </g>
+</svg>

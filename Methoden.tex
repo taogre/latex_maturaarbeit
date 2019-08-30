@@ -2,3 +2,32 @@
 \section{Methoden}
 \label{sec:methode}
 
+\subsection{Grundlegende Überlegungen}
+Was brauchen Pflanzen zum überleben und wie kann ich sicherstellen, dass diese Bedürfnisse befriedigt werden? \newline Wenn man die Gleichung der Photosynthese betrachtet, kann man erkennen, dass die drei Hauptbedürfnisse von pflanzlichem Leben Wasser, Nährstoffe und Licht sind. Diese drei Hauptbedürfnisse werden in der Natur durch Grundwasser oder Regen, den natürlichen Kreislauf von Nährstoffen in der Erde und durch Sonnenlicht befriedigt. Da in einem Gebäude diese Ressourcen nicht vorhanden sind, müssen die Hauptbedürfnisse künstlich befriedigt werden. Konkret heisst das, dass die Pflanzen künstlich bewässert werden müssen und dass sie künstliches Licht brauchen. Es ist jedoch nicht ganz so einfach. Denn Pflanzen sind vor allem auf die richtige Menge an Wasser und Licht angewiesen. \newline Als Grundlage diente mir ein Gewächshaus mit den Dimensionen blablabla...
+\subsection{Elektronik}
+\subsubsection{Steuerungseinheit}
+Die Steuerungseinheit, hat die Aufgabe alle Daten, die er vom Sensor enthält, zu verarbeiten und die Bewässerung, die Belüftung wie auch die Beleuchtung zu steuern.
+Als Steuerungseinheit wurde ein Mikrokontroller verwendet. Ein Mikrokontroller ist nichts anderes als ein Computer, welcher jedoch so weit reduziert wurde, dass er nur noch die nötigste Hardware besitzt um gewisse Aufgaben erledigen zu können. Das Gehirn des Mikrocontrollers ist ein Mikroprozessor. Er nimmt alle eingehenden Daten entgegen, verarbeitet sie und gibt darauf Befehle, welche von anderen Bauteilen entgegengenommen werden können. Ausserdem enthält der Mikrocontroller einen ROM und einen RAM Speicher. ROM steht für «read-only memory». Darin wird das geschriebene Programm, welches dem Prozessor sagt was er zu tun hat, abgespeichert. RAM steht für «random access memory». Darin kann der Prozessor Daten zwischenspeichern um sie zu einem späteren Zeitpunkt wieder zu verwenden. Um mit Peripheriegeräten wie Sensoren kommunizieren zu können, hat der Mikrocontroller Schnittstellen, genannt «pins». Über diese Schnittstellen kann der Prozessor Daten empfangen und senden.
+Als Steuerungseinheit wurde ein Arduino Mikrocontroller verwendet, genauer gesagt ein Arduino Mega 2560. Es ist der grösste Arduino und hat den Vorteil, dass er viel mehr Pins hat um Sensoren und Steuerungsmodule zu bedienen. Der Arduino wurde hauptsächlich gewählt, da er für solche Projekte entwickelt wurde und durch seine Benutzerfreundlichkeit überzeugt. Ausserdem gibt es hunderte verschiedene Geräte zu kaufen, welche perfekt mit dem Arduino kompatibel sind.
+Alle Arduinos werden mit einer eigens entwickelten Programmiersprache programmiert. Die Programmiersprache ist angelehnt an die weit verbreitete Programmiersprache C++ und wurde von den Erfindern des Arduinos entwickelt. Die Programmiersprache dient dazu, die Befehle zu definieren, welche der Arduino ausführen soll.
+Die Hauptaufgabe des Arduinos besteht darin Daten von den Sensoren zu erhalten, diese zu verarbeiten und daraufhin den richtigen Befehl an eine andere Komponente weiterzugeben.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{\BILDER arduino_mega}
+\end{figure}
+
+\subsubsection{Sensoren}
+\paragraph{Luftsensor:}
+Um die Lufttemperatur zu überwachen, wurde ein Luftsensor verwendet, welcher vom Arduino angesteuert werden kann. Es handelt sich dabei um den Luftsensor AM2302 des Herstellers ... . Der Luftsensor AM2302 ist identisch mit dem Luftsensor DHT22, ist jedoch in einem robusten Plastikgehäuse verpackt.
+Der Luftsensor verwendet einen Thermistor, also einen temperatursensiblen Wiederstand (engl. thermal resistor), um die Temperatur zu messen. Dabei verhällt sich der Thermistor so, dass mit steigender Temperatur der Wiederstand abnimmt. Die Abnahme verläuft exponentiell, wobei bei tiefen Temperaturen die Kurve steil und bei höheren Temperaturen die Kurve flacher wird.
+
+\begin{\begin{figure}
+  \includegraphics[width=\linewidth]{\BILDER thermistor_graph}
+  \caption{}
+  \label{}
+\end{figure}
+
+\paragraph{Bodensensor:}
+Um die Feuchtigkeit im Boden, also die Menge an Wasser in der Erde, zu messen, wurde ein Bodenfeuchtigkeitssensor verwendet. Es gibt für den projektorientierten Privatgebrauch zwei verschiedene Arten von Bodenfeuchtigkeitssensoren. Die eine Art von Bodenfeuchtigkeitssensoren misst den Wiederstand im Boden um daraus den Wasseranteil berechnen zu können. Diese Art von Bodenfeuchtigkeitssensor ist sehr einfach herzustellen und daher auch sehr günstig. Jedoch haben diese Sensoren gewisse Nachteile. Denn um den Wiederstand des Bodens zu messen muss Strom durch den Boden fliessen, was bedeutet, dass zwischen den elektrischen Kontakten Elektrolyse betrieben wird. Bei der Elektrolyse kommt es an der Anode, also am Minispol, zu galvanischer Korrosion. Was für den Sensor bedeuten würde, dass nach einer gewissen Zeit der Metalkontakt am Minuspol weg ist. Zudem kommt, dass die Messresultate des Sensors stark abweichen können, wenn sich der Mineralgehalt in der Erde verändert. Aus den eben genannten Gründen wurde diese Art von Bodenfeuchtigkeitssensor als nicht geeignet eingestuft und es wurde nach einer anderen Art von Bodenfeuchtigkeitssensor gesucht.
+Die andere Art von Bodenfeuchtigkeitssensoren misst nicht den Wiederstand in der Erde sondern die elektrische Kapazität...

@@ -1,0 +1,14 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Vorwort}{1}{section.1}% 
+\contentsline {section}{\numberline {2}Methoden}{2}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Grundlegende \IeC {\"U}berlegungen}{2}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Elektronik}{2}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Steuerungseinheit}{2}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Sensoren}{3}{subsubsection.2.2.2}% 
+\contentsline {paragraph}{\nonumberline Luftsensor:}{3}{section*.2}% 
+\contentsline {paragraph}{\nonumberline Bodensensor:}{4}{section*.3}% 
+\contentsline {section}{\numberline {3}Ergebnisse}{5}{section.3}% 
+\contentsline {section}{\numberline {4}Diskussion und Schlussfolgerung}{6}{section.4}% 
+\contentsline {section}{\numberline {5}Reflexion und Ausblick}{7}{section.5}% 
+\contentsline {section}{\numberline {A}Anhang\ 1}{9}{appendix.A}% 
+\contentsline {section}{\numberline {B}Anhang\ 2}{9}{appendix.B}% 
